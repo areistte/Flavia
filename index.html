@@ -64,7 +64,60 @@
 
 
 
-	
+    .presente {
+      font-size: 3rem;
+      font-weight: bold;
+      padding: 20px 40px;
+      border-radius: 15px;
+      cursor: pointer;
+      animation: piscarCores 1s infinite;
+      text-align: center;
+    }
+
+    @keyframes piscarCores {
+      0% { color: red; background-color: yellow; }
+      25% { color: blue; background-color: pink; }
+      50% { color: green; background-color: orange; }
+      75% { color: magenta; background-color: cyan; }
+      100% { color: red; background-color: yellow; }
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      color: black;
+      padding: 30px;
+      border-radius: 10px;
+      font-size: 1.5rem;
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .fechar {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #222;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+	  
+
 	
 
     @keyframes flutuar {
@@ -178,14 +231,41 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
-
-
-
   <p class="assinatura">
     Te amo mais a cada dia.<br />
     Com todo o meu amor,<br />
     <strong>Adriano Reis 💖</strong>
   </p>
+
+
+<div class="presente" onclick="abrirModal()">
+  CLIQUE E VEJA SEU PRESENTE !!!
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    Você acaba de ganhar um vale <strong>BOTA</strong> para comprar no shopping sem limite de valor.<br>
+    <em>Desde que a gente não fique falido.</em>
+    <br>
+    <button class="fechar" onclick="fecharModal()">Fechar</button>
+  </div>
+</div>
+
+<script>
+  function abrirModal() {
+    document.getElementById('modal').style.display = 'flex';
+  }
+
+  function fecharModal() {
+    document.getElementById('modal').style.display = 'none';
+  }
+</script>
+
+
+
+
+
+	
 </body>
 </html>
 
